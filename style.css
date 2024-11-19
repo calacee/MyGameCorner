@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: Gothic A1, sans-serif;
+}
+
+
+.navbar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 4vw;
+    font-size: 1vw;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background-color: black;
+}
+
+.logo {
+    width: 4.5vw;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2vw;
+    margin: 0vw;
+    padding: 0vw;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 1vw 2vw;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 1vw;
+}
+
+.carousel {
+    margin-top: 10vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 10%;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 10%;
+    object-fit: cover;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1vw;
+    cursor: pointer;
+    border-radius: 25%;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.text{
+    background: rgba(69, 69, 69, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(103, 103, 103, 0.1);;
+    border: 1px solid rgba(255, 255, 255, 1);;
+    font-size: 1.5vw;
+    padding: 1vw;
+}
+.text-title{
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(103, 103, 103, 0.1);;
+    border: 1px solid rgba(255, 255, 255, 1);;
+    background: rgba(0, 0, 0, 0.7);
+    width: fit-content;
+    margin-top: 2vw;
+    font-size: 3vw;
+}
