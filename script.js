@@ -47,3 +47,25 @@ async function nextCarousel(){
 }
 
 setInterval(nextCarousel, 5000)
+
+// grid
+
+document.querySelectorAll('.card').forEach(card => {
+    const staticImg = card.querySelector('.static-img'); // Miniatura inicial
+    const gifImg = card.querySelector('.gif-img'); // Elemento GIF
+  
+    card.addEventListener('mouseenter', () => {
+      const gifUrl = card.getAttribute('data-gif');
+      if (gifUrl) {
+        gifImg.src = gifUrl; // Carrega o GIF
+        gifImg.style.display = 'block'; // Mostra o GIF
+        staticImg.style.display = 'none'; // Esconde a miniatura
+      }
+    });
+  
+    card.addEventListener('mouseleave', () => {
+      gifImg.style.display = 'none'; // Esconde o GIF
+      staticImg.style.display = 'block'; // Mostra novamente a miniatura
+    });
+  });
+  
