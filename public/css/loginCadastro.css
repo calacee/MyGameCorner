@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: Gothic A1, sans-serif;
+}
+
+.login-register {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.navbar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 4vw;
+    font-size: 1vw;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background-color: black;
+}
+
+.logo {
+    width: 4.5vw;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2vw;
+    margin: 0vw;
+    padding: 0vw;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 1vw 2vw;
+    transition: background-color 0s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 1vw;
+}
+
+.container {
+    background: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-switch {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-switch button {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.form-switch button.active {
+    border-color: white;
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form.active {
+    display: flex;
+}
+
+.form input {
+    background: black;
+    border: 1px solid white;
+    color: white;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form button:hover {
+    background: #e6e6e6;
+}
+/*Footer*/
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2vw;
+    text-align: center;
+  }
+  
+  .containerfooter {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .logofooter {
+    margin-bottom: 2px;
+  }
+  
+  .logofooter img {
+    width: 5.2vw; /* ajuste o tamanho da logo aqui */
+    height: auto;
+  }
+  
+  .copyright {
+    font-size: 14px;
+    color: #666;
+  }
