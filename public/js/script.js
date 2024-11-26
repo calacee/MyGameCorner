@@ -68,4 +68,12 @@ document.querySelectorAll('.card').forEach(card => {
       staticImg.style.display = 'block'; // Mostra novamente a miniatura
     });
   });
-  
+
+// Seleciona o botão pelo ID
+const darksouls3 = document.getElementById('darksouls3');
+
+// Adiciona o event listener ao botão
+darksouls3.addEventListener('click', () => {
+    // Abre uma nova janela
+    window.open('darksouls3.html');
+});

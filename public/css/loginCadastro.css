@@ -133,30 +133,3 @@ body{
 .form button:hover {
     background: #e6e6e6;
 }
-/*Footer*/
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 2vw;
-    text-align: center;
-  }
-  
-  .containerfooter {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .logofooter {
-    margin-bottom: 2px;
-  }
-  
-  .logofooter img {
-    width: 5.2vw; /* ajuste o tamanho da logo aqui */
-    height: auto;
-  }
-  
-  .copyright {
-    font-size: 14px;
-    color: #666;
-  }
