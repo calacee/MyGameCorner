@@ -5,6 +5,12 @@ const nextButton = document.querySelector('.next');
 
 let index = 0;
 
+if(sessionStorage.ID_USUARIO != undefined){
+    login_e_cadastro.style.display = 'none';
+    infoUsuario.style.display = 'inline';
+    infoUsuario.innerHTML = `Ola, ${sessionStorage.USERNAME}`
+}
+
 // Função para calcular o deslocamento total com base no tamanho das imagens anteriores
 function calculateOffset() {
     let offset = 0;

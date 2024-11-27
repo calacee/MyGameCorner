@@ -12,9 +12,9 @@
         <div class="logo"><img src="assets/mgc_logo.png" alt=""class="logo"></div>
         <ul class="nav-links">
             <li><a href="index.html">Início</a></li>
-            <li><a href="#services">Dashboard</a></li>
-            <li><a href="loginCadastro.html">Login e Cadastro</a></li>
-            <li><a href="#about">Jogos</a></li>
+            <li><a href="#about">Dashboard</a></li>
+            <li><a href="loginCadastro.html" id="login_e_cadastro">Login e Cadastro</a></li>
+            <li><a href="#services" id="infoUsuario">Olá, </a></li>
         </ul>
     </nav>
     <div class="game-logo" style="margin-top: 6vw;">
@@ -73,12 +73,13 @@
         <h4>Escrever uma análise de Dark Souls 3</h4>
         <h6>Descreva o que gostou e o que não gostou neste jogo e se você o recomenda a outros. <br>
         Não se esqueça de ter educação e respeito.</h6>
-        <textarea name="" id="" rows="10"></textarea>
+        <textarea name="" id="reviewText" rows="10"></textarea>
         <h6>Você recomenda esse jogo?</h6>
-        <input type="radio"><img src="assets/like_icon.png" alt="" style="width: 4vw;"></input>  
-        <input type="radio"><img src="assets/like_icon.png" alt="Like Icon" style=" transform: rotate(180deg); width: 4vw;"></input>
-        <button onclick="publish()" class="analisys-button" >Publicar Analise</button>
+        <input type="radio" name="toggle" value="true"><img src="assets/like_icon.png" alt="" style="width: 4vw;"></input>  
+        <input type="radio" name="toggle" value="false"><img src="assets/like_icon.png" alt="Like Icon" style=" transform: rotate(180deg); width: 4vw;"></input>
+        <button onclick="publish(1)" class="analisys-button" >Publicar Analise</button>
     </div>
     </center>
 </body>
 </html>
+<script src="js/darksouls3.js"></script>
