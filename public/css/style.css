@@ -72,7 +72,7 @@ body{
     object-fit: cover;
 }
 
-button {
+.button-carrousel {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -96,24 +96,24 @@ button:hover {
     right: 10px;
 }
 .text{
-    color: black;
-    background:white;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(103, 103, 103, 0.1);;
-    border: 1px solid rgba(255, 255, 255, 1);;
+    color: white;
+    background:black;
     font-size: 1.5vw;
     padding: 1vw;
     width: 80%;
     text-align: left;
 }
 .text-title{
-    background: rgba(0, 0, 0, 0.7);
-    width: fit-content;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    font-size: 3vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 2vw; /* Ajuste o tamanho conforme necessário */
+  font-weight: bold;
+  color: black; /* Texto branco */
+  background-color: white; /* Fundo preto */
+  text-align: center;
+  padding: 20px;
+  clip-path:polygon(0 0, 100% 0, 100% 0%, 95% 100%, 0 100%); /* Inclinação na parte inferior */
 }
-
 /*
 Grid
 */
@@ -219,4 +219,16 @@ footer {
 .copyright {
   font-size: 14px;
   color: #666;
+}
+
+.game-logo{
+  justify-content: center;
+  display: flex;
+}
+.game-logo img{
+  width: 50vw;
+}
+textarea{
+  width: 100%;
+  font-size: 15pt;
 }
