@@ -10,14 +10,16 @@ function avaliar(req, res) {
 
     // Faça as validações dos valores
     if (id == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+        res.status(400).send("Seu id está undefined!");
     } else if (mensagem == undefined) {
-        res.status(400).send("Seu email está undefined!");
+        res.status(400).send("Sua mensagem está undefined!");
     } else if (sentimento == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Seu sentimento está undefined!");
+    } else if (idJogo == undefined) {
+        res.status(400).send("Seu idJogo está undefined!");
     }
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        avaliarModel.avaliar(id, mensagem, sentimento)
+        avaliarModel.avaliar(id, mensagem, sentimento, idJogo)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -36,6 +38,5 @@ function avaliar(req, res) {
 
 
 module.exports = {
-    autenticar,
-    cadastrar
+    avaliar
 }

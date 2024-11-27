@@ -3,7 +3,7 @@ var router = express.Router();
 
 var avaliarController = require("../controllers/avaliarController");
 
-router.post("/cadastrar", function (req, res) {
+router.post("/enviar", function (req, res) {
     avaliarController.avaliar(req, res);
 })
 
