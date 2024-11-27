@@ -84,7 +84,7 @@ body{
     border-radius: 25%;
 }
 
-button:hover {
+.button-carrousel:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -231,4 +231,12 @@ footer {
 textarea{
   width: 100%;
   font-size: 15pt;
+}
+.analisys-button{
+  background: white;
+  color: black;
+  border-radius: 2vw;
+  padding: 1vw;
+  font-size: 11pt;
+  float: right;
 }

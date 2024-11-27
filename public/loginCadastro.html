@@ -26,16 +26,16 @@
                 </div>
                 <form id="login-form" class="form active">
                     <h2>Login</h2>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Senha" required>
-                    <button type="submit">Entrar</button>
+                    <input type="text" id="lgnUsername" placeholder="Username">
+                    <input type="password" id="lgnPassword" placeholder="Senha">
+                    <button onclick="login()">Entrar</button>
                 </form>
                 <form id="register-form" class="form">
                     <h2>Cadastro</h2>
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Senha" required>
-                    <button type="submit">Cadastrar</button>
+                    <input type="text" id="rgstrUsername" placeholder="Username">
+                    <input type="email" id="rgstrEmail" placeholder="Email">
+                    <input type="password" id="rgstrPassword" placeholder="Senha">
+                    <button onclick="register()">Cadastrar</button>
                 </form>
             </div>
         </div>
