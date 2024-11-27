@@ -42,6 +42,7 @@ function register(){
 }
 
 function login(){
+    console.log("login")
     var username =  lgnUsername.value;
     var password =  lgnPassword.value;
     
@@ -56,8 +57,18 @@ function login(){
         if(res.status != 200){
           throw new Error("Erro ao logar")
         }
+
+        return res.json()
+        // console.log(res)
+      }).then((data) => {
+        sessionStorage.ID_USUARIO = data.id
+        sessionStorage.USERNAME = data.username
+        window.location.href = '../index.html'   
+        console.log(data)
       }).catch((err) => {
         // Exibe uma mensagem de erro se o login falhar
-        mensagemErro.textContent = 'Login ou senha inválida.';
+        // mensagemErro.textContent = 'Login ou senha inválida.';
+        // alert('Login ou senha inválida.', err);
+        console.log("erro", err)
     });
 }
