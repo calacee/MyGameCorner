@@ -4,6 +4,22 @@ if(sessionStorage.ID_USUARIO != undefined){
     infoUsuario.innerHTML = `Ola, ${sessionStorage.USERNAME}`
 }
 
+// NAVBAR SAIR
+infoUsuario.addEventListener("click", function (e) {
+  e.preventDefault(); // Evita comportamento padrão do link
+  const isMenuVisible = userMenu.style.display === "block";
+  userMenu.style.display = isMenuVisible ? "none" : "block";
+});
+document.addEventListener("click", function (e) {
+  if (!infoUsuario.contains(e.target) && !userMenu.contains(e.target)) {
+      userMenu.style.display = "none";
+  }
+});
+const sairNav = document.getElementById('navSair');
+sairNav.addEventListener('click', () =>{
+sessionStorage.clear();
+window.open('index.html');
+});
 
 
 function publish(id_jogo){

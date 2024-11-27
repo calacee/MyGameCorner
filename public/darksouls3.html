@@ -12,9 +12,14 @@
         <div class="logo"><img src="assets/mgc_logo.png" alt=""class="logo"></div>
         <ul class="nav-links">
             <li><a href="index.html">Início</a></li>
-            <li><a href="#about">Dashboard</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="loginCadastro.html" id="login_e_cadastro">Login e Cadastro</a></li>
-            <li><a href="#services" id="infoUsuario">Olá, </a></li>
+            <li>
+                <a href="" id="infoUsuario" style="display: none;"></a>
+                <ul id="userMenu" class="dropdown-menu" style="display: none;">
+                    <li><a id="navSair">Sair</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <div class="game-logo" style="margin-top: 6vw;">
@@ -75,11 +80,11 @@
         Não se esqueça de ter educação e respeito.</h6>
         <textarea name="" id="reviewText" rows="10"></textarea>
         <h6>Você recomenda esse jogo?</h6>
-        <input type="radio" name="toggle" value="true"><img src="assets/like_icon.png" alt="" style="width: 4vw;"></input>  
-        <input type="radio" name="toggle" value="false"><img src="assets/like_icon.png" alt="Like Icon" style=" transform: rotate(180deg); width: 4vw;"></input>
+        <input type="radio" name="toggle" value= "1"><img src="assets/like_icon.png" alt="" style="width: 4vw;"></input>  
+        <input type="radio" name="toggle" value="0"><img src="assets/like_icon.png" alt="Like Icon" style=" transform: rotate(180deg); width: 4vw;"></input>
         <button onclick="publish(1)" class="analisys-button" >Publicar Analise</button>
     </div>
     </center>
 </body>
 </html>
-<script src="js/darksouls3.js"></script>
+<script src="js/games.js"></script>

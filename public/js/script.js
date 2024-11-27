@@ -70,16 +70,42 @@ document.querySelectorAll('.card').forEach(card => {
     });
   
     card.addEventListener('mouseleave', () => {
-      gifImg.style.display = 'none'; // Esconde o GIF
-      staticImg.style.display = 'block'; // Mostra novamente a miniatura
+      gifImg.style.display = 'none';
+      staticImg.style.display = 'block';
     });
   });
 
-// Seleciona o botão pelo ID
-const darksouls3 = document.getElementById('darksouls3');
+  document.addEventListener("DOMContentLoaded", function () {
+    const infoUsuario = document.getElementById("infoUsuario");
+    const userMenu = document.getElementById("userMenu");
 
-// Adiciona o event listener ao botão
+
+
+// Abre a pagina dos jogos dos grids
+const darksouls3 = document.getElementById('darksouls3');
 darksouls3.addEventListener('click', () => {
-    // Abre uma nova janela
     window.open('darksouls3.html');
+});
+const devilmaycry5 = document.getElementById('devilmaycry5');
+devilmaycry5.addEventListener('click', () =>{
+    window.open('devilmaycry5.html');
+});
+
+
+// NAVBAR SAIR
+    infoUsuario.addEventListener("click", function (e) {
+        e.preventDefault(); // Evita comportamento padrão do link
+        const isMenuVisible = userMenu.style.display === "block";
+        userMenu.style.display = isMenuVisible ? "none" : "block";
+    });
+    document.addEventListener("click", function (e) {
+        if (!infoUsuario.contains(e.target) && !userMenu.contains(e.target)) {
+            userMenu.style.display = "none";
+        }
+    });
+});
+const sairNav = document.getElementById('navSair');
+    sairNav.addEventListener('click', () =>{
+    sessionStorage.clear();
+    window.open('index.html');
 });

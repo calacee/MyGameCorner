@@ -14,9 +14,14 @@
         <div class="logo"><img src="assets/mgc_logo.png" alt=""class="logo"></div>
         <ul class="nav-links">
             <li><a href="index.html">Início</a></li>
-            <li><a href="#about">Dashboard</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="loginCadastro.html" id="login_e_cadastro">Login e Cadastro</a></li>
-            <li><a href="#services" id="infoUsuario" style="display: none;"></a></li>
+            <li>
+              <a href="" id="infoUsuario" style="display: none;"></a>
+              <ul id="userMenu" class="dropdown-menu" style="display: none;">
+                  <li><a id="navSair">Sair</a></li>
+              </ul>
+          </li>
         </ul>
     </nav>
     
@@ -55,7 +60,7 @@
             <p>FromSoftware</p>
           </div>
         </div>
-        <div class="card" data-gif="assets/gifs/dmcgrid.gif">
+        <div class="card" data-gif="assets/gifs/dmcgrid.gif" id="devilmaycry5">
           <div class="background"></div>
           <img src="assets/gifs/dmcgrid.jpg" alt="DMC GIF" class="static-img">
           <img src="assets/gifs/dmcgrid.gif" alt="GIF" class="gif-img" style="display: none;">

@@ -240,3 +240,26 @@ textarea{
   font-size: 11pt;
   float: right;
 }
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+
