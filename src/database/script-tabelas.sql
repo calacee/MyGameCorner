@@ -20,6 +20,7 @@ CREATE TABLE analises(
 	mensagem TEXT,
 	fkJogo INT,
 	fkUsuario INT,
+	createdAt DATETIME DEFAULT current_timestamp(),
 	FOREIGN KEY(fkUsuario) REFERENCES usuario(idUsuario),
 	FOREIGN KEY(fkJogo) REFERENCES jogos(idJogo)
 );

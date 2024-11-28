@@ -27,7 +27,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/avaliar", avaliarRouter)
+app.use("/avaliar", avaliarRouter);
 
 
 app.listen(PORTA_APP, function () {

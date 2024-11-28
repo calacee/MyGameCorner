@@ -84,7 +84,13 @@
         <input type="radio" name="toggle" value="0"><img src="assets/like_icon.png" alt="Like Icon" style=" transform: rotate(180deg); width: 4vw;"></input>
         <button onclick="publish(1)" class="analisys-button" >Publicar Analise</button>
     </div>
+    <div class="text" id="avaliacoes">
+        
+    </div>
     </center>
 </body>
 </html>
 <script src="js/games.js"></script>
+<script type="module">
+    avaliacoes.innerHTML = await puxarAvaliacoes(1);
+</script>

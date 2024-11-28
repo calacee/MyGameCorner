@@ -1,3 +1,4 @@
+const { query } = require("express");
 var avaliarModel = require("../models/avaliarModel");
 
 
@@ -28,15 +29,55 @@ function avaliar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao realizar a avaliação! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
                 }
             );
-    }
+}
 
+function puxar(req, res){
+    var fkJogo = req.query.fkJogo
+    
+    avaliarModel.puxar(fkJogo)
+        .then(
+            function (resultado){
+                res.json(resultado)
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao puxar os dados! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+function grafico(req, res){
+    var fkJogo = req.query.fkJogo
+    
+    avaliarModel.grafico(fkJogo)
+        .then(
+            function (resultado){
+                res.json(resultado)
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao puxar os dados! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
 
 module.exports = {
-    avaliar
+    avaliar,
+    puxar,
+    grafico
 }

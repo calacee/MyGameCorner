@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGameCorner | Dashboards</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="assets/mgc_logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="assets/mgc_logo.png" alt=""class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="loginCadastro.html" id="login_e_cadastro">Login e Cadastro</a></li>
+            <li>
+                <a href="" id="infoUsuario" style="display: none;"></a>
+                <ul id="userMenu" class="dropdown-menu" style="display: none;">
+                    <li><a id="navSair">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <center>
+        <div class="text" style="margin-top: 10vw;">
+            <center>
+                <select id="selectGrafs">
+                    <option value="1">Dark Souls 3</option>
+                    <option value="2">Devil May Cry 5</option>
+                    <option value="3">Resident Evil 2</option>
+                    <option value="4">Guilty Gear -STRIVE-</option>
+                    <option value="5">Doom Eternal</option>
+                    <option value="6">Hollow Knight</option>
+                </select>
+            </center>
+            <canvas id="myChart"></canvas>
+        </div> 
+    </center>
+
+
+</body>
+</html>
+<script src="js/games.js"></script>
+<script type="module">
+selectGrafs.addEventListener('change', mudarGrafico)
+
+const config = {
+      type: 'line',
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Gráfico da Comunidade'
+          }
+        }
+      },
+    };   
+const ctx = document.getElementById('myChart');
+const chart = new Chart(ctx, config);
+var jogo = selectGrafs.value;
+    
+async function mudarGrafico(){
+    jogo = selectGrafs.value
+    var puxou = await puxarDados(jogo);
+
+    const dados = {
+        labels: puxou.map((item) => {
+            return item.createdAt;
+        }),
+        datasets: [
+        {
+                label: "Positivo",
+                data: puxou.map((item) => {
+                    return item.contagem_true;
+                })
+        },
+        {
+                label: "Negativo",
+                data: puxou.map((item) => {
+                    return item.contagem_false;
+                    })
+            }
+        ]}
+    chart.data = dados;
+    chart.update();
+    }
+    mudarGrafico();
+</script>

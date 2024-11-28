@@ -6,7 +6,7 @@ if(sessionStorage.ID_USUARIO != undefined){
 
 // NAVBAR SAIR
 infoUsuario.addEventListener("click", function (e) {
-  e.preventDefault(); // Evita comportamento padrão do link
+  e.preventDefault(); 
   const isMenuVisible = userMenu.style.display === "block";
   userMenu.style.display = isMenuVisible ? "none" : "block";
 });
@@ -21,6 +21,7 @@ sessionStorage.clear();
 window.open('index.html');
 });
 
+// Função para publicar a sua análise
 
 function publish(id_jogo){
     let radios = document.querySelector('input[name="toggle"]:checked')?.value;
@@ -49,9 +50,29 @@ function publish(id_jogo){
       }).then((res) => {
          // Redireciona para a página desejada se os dados estiverem corretos
         if(res.status != 200){
-          throw new Error("Erro ao cadastrar")
+          throw new Error("Erro ao publicar")
         }
       }).catch((err) => {
-        // mensagemErro.textContent = 'Login ou senha inválida.';
       });
+}
+
+// Configuração da dash
+async function puxarDados(fkJogo) {
+  return (await fetch(`/avaliar/grafico?fkJogo=${fkJogo}`,{
+    method:"GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })).json();  
+}
+
+// Puxando avaliaçoes jogos
+
+async function puxarAvaliações(fkJogo){
+  return (await fetch(`/avaliar/puxar?fkJogo=${fkJogo}`,{
+    method:"GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })).json();
 }

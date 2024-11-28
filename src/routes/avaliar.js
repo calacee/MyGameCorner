@@ -7,4 +7,12 @@ router.post("/enviar", function (req, res) {
     avaliarController.avaliar(req, res);
 })
 
+router.get("/puxar", function (req, res){
+    avaliarController.puxar(req, res)
+})
+
+router.get("/grafico", function (req, res){
+    avaliarController.grafico(req, res)
+})
+
 module.exports = router;
