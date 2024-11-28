@@ -18,6 +18,28 @@ registerBtn.addEventListener("click", () => {
 });
 
 function register(){
+  
+  var username = rgstrUsername.value;
+  var email = rgstrEmail.value;
+  var senha = rgstrPassword.value;
+  var arrobaIndex = email.indexOf("@");
+  var pontoIndex = email.indexOf(".");
+
+  if(arrobaIndex === -1 ||
+    pontoIndex === -1 ||
+    arrobaIndex <= 0 ||
+    pontoIndex >= email.length - 1
+    ){
+      alert("Insira um email válido!");
+      return;
+    }
+  if(username.length < 3){
+    alert("Nome de Usuário muito curto!");
+    return;
+  }
+  if(senha.length < 8){
+    alert("Insira uma senha com no mínimo 8 caracteres!")
+  }
     var body = {
         username: rgstrUsername.value,
         email: rgstrEmail.value,
@@ -30,14 +52,10 @@ function register(){
         },
         body: JSON.stringify(body)
       }).then((res) => {
-         // Redireciona para a página desejada se os dados estiverem corretos
         if(res.status != 200){
           throw new Error("Erro ao cadastrar")
         }
-        // window.location.href = 'dashboard/dashboard.html'
       }).catch((err) => {
-        // Exibe uma mensagem de erro se o login falhar
-        // mensagemErro.textContent = 'Login ou senha inválida.';
       });
 }
 
@@ -68,7 +86,6 @@ function login(){
       }).catch((err) => {
         // Exibe uma mensagem de erro se o login falhar
         // mensagemErro.textContent = 'Login ou senha inválida.';
-        // alert('Login ou senha inválida.', err);
-        console.log("erro", err)
+        alert('Login ou senha inválida.');
     });
 }
