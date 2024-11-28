@@ -15,18 +15,18 @@ O projeto My Game Corner tem como objetivo fornecer uma plataforma interativa pa
  Ilustração Representativa da Interface do Usuário
 
 
- +-----------------------+
- |     My Game Corner    |
- +-----------------------+
- |    [Login | Register] |
- +-----------------------+
- |      Olá, Usuário     |
- +-----------------------+
- |   [Jogo 1] [Jogo 2]   |
- |   [Jogo 3] [Jogo 4]   |
- +-----------------------+
- |   [Perfil | Logout]   |
- +-----------------------+
+ +-----------------------+ <br>
+ |     My Game Corner    | <br>
+ +-----------------------+ <br>
+ |    [Login | Register] | <br>
+ +-----------------------+ <br>
+ |      Olá, Usuário     | <br>
+ +-----------------------+ <br>
+ |   [Jogo 1] [Jogo 2]   | <br>
+ |   [Jogo 3] [Jogo 4]   | <br>
+ +-----------------------+ <br>
+ |   [Perfil | Logout]   | <br>
+ +-----------------------+ <br>     
 
 
 # Funcionalidades
