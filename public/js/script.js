@@ -90,6 +90,22 @@ const devilmaycry5 = document.getElementById('devilmaycry5');
 devilmaycry5.addEventListener('click', () =>{
     window.open('devilmaycry5.html');
 });
+const residentevil2 = document.getElementById('residentevil2');
+residentevil2.addEventListener('click', () =>{
+    window.open('residentevil2.html');
+});
+const guiltygear = document.getElementById('guiltygear');
+guiltygear.addEventListener('click', () =>{
+    window.open('guiltygear.html');
+});
+const doometernal = document.getElementById('doometernal');
+doometernal.addEventListener('click', () =>{
+    window.open('doometernal.html');
+});
+const hollowknight = document.getElementById('hollowknight');
+hollowknight.addEventListener('click', () =>{
+    window.open('hollowknight.html');
+});
 
 
 // NAVBAR SAIR
@@ -109,3 +125,4 @@ const sairNav = document.getElementById('navSair');
     sessionStorage.clear();
     window.open('index.html');
 });
+

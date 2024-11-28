@@ -7,7 +7,7 @@ router.post("/enviar", function (req, res) {
     avaliarController.avaliar(req, res);
 })
 
-router.get("/puxar", function (req, res){
+router.get("/puxar/:idJogo", function (req, res){
     avaliarController.puxar(req, res)
 })
 

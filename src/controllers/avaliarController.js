@@ -38,8 +38,8 @@ function avaliar(req, res) {
 }
 
 function puxar(req, res){
-    var fkJogo = req.query.fkJogo
-    
+    var fkJogo = req.params.idJogo
+    console.log(fkJogo)
     avaliarModel.puxar(fkJogo)
         .then(
             function (resultado){

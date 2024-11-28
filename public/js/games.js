@@ -48,15 +48,16 @@ function publish(id_jogo){
         },
         body: JSON.stringify(body)
       }).then((res) => {
-         // Redireciona para a página desejada se os dados estiverem corretos
         if(res.status != 200){
           throw new Error("Erro ao publicar")
         }
+        window.location.reload();
       }).catch((err) => {
       });
 }
 
 // Configuração da dash
+
 async function puxarDados(fkJogo) {
   return (await fetch(`/avaliar/grafico?fkJogo=${fkJogo}`,{
     method:"GET",
@@ -66,13 +67,5 @@ async function puxarDados(fkJogo) {
   })).json();  
 }
 
-// Puxando avaliaçoes jogos
 
-async function puxarAvaliações(fkJogo){
-  return (await fetch(`/avaliar/puxar?fkJogo=${fkJogo}`,{
-    method:"GET",
-    headers: {
-      "Content-Type": "application/json"
-    },
-  })).json();
-}
+

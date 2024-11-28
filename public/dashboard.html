@@ -33,7 +33,15 @@
                     <option value="4">Guilty Gear -STRIVE-</option>
                     <option value="5">Doom Eternal</option>
                     <option value="6">Hollow Knight</option>
-                </select>
+                </select><br><br>
+            <div style="display: flex;flex-direction: row;">
+                <div class="text"  style="border: 2px solid white;" id="kpiPositivo" style="text-align: center;">
+                    
+                </div>
+                <div class="text"  style="border: 2px solid white;" id="kpiNegativo" style="text-align: center;">
+
+                </div>
+            </div>
             </center>
             <canvas id="myChart"></canvas>
         </div> 
@@ -66,8 +74,19 @@ const chart = new Chart(ctx, config);
 var jogo = selectGrafs.value;
     
 async function mudarGrafico(){
+    var totalTrue = 0;
+    var totalFalse = 0;
+
     jogo = selectGrafs.value
     var puxou = await puxarDados(jogo);
+
+    puxou.forEach(element => {
+        totalTrue += element.contagem_true
+        totalFalse += element.contagem_false
+    });
+
+    kpiPositivo.innerHTML = `<h2>Total Positivo</h2>
+                            ${totalTrue}`
 
     const dados = {
         labels: puxou.map((item) => {
@@ -91,4 +110,5 @@ async function mudarGrafico(){
     chart.update();
     }
     mudarGrafico();
+    
 </script>
