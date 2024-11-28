@@ -262,4 +262,16 @@ textarea{
   display: block;
 }
 
-
+select {
+  padding: 8px 15px;                
+  font-size: 14pt;                  
+  border: 2px solid white;        
+  border-radius: 6px;               
+  background-color: black;      
+  color: white;                 
+  width: 200px;                  
+  appearance: none;              
+  -webkit-appearance: none;      
+  -moz-appearance: none;          
+  cursor: pointer;                
+}

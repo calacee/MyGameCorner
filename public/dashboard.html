@@ -87,6 +87,8 @@ async function mudarGrafico(){
 
     kpiPositivo.innerHTML = `<h2>Total Positivo</h2>
                             ${totalTrue}`
+    kpiNegativo.innerHTML = `<h2>Total Negativo</h2>
+                            ${totalFalse}`
 
     const dados = {
         labels: puxou.map((item) => {

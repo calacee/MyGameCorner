@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGameCorner | Guilty Gear -STRIVE-</title>
+    <link rel="icon" href="assets/mgc_logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="assets/mgc_logo.png" alt=""class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="loginCadastro.html" id="login_e_cadastro">Login e Cadastro</a></li>
+            <li>
+                <a href="" id="infoUsuario" style="display: none;"></a>
+                <ul id="userMenu" class="dropdown-menu" style="display: none;">
+                    <li><a id="navSair">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="game-logo" style="margin-top: 6vw;">
+        <img src="assets/GGStrive_Logo.jpg" alt="" class="game-logo" style="width: 30vw;">
+    </div>
+    <div class="text-title">
+        Sobre o jogo
+    </div>
+    <center>
+    <div class="text">
+        Guilty Gear Strive é o mais recente título da popular franquia de jogos de luta Guilty Gear, desenvolvido pela Arc System Works. 
+        A história do jogo continua a complexa trama da série, misturando elementos de ficção científica com ação frenética e personagens carismáticos. 
+        O jogo segue os eventos que ocorreram em Guilty Gear Xrd Revelator.
+    </div>
+    <img src="assets/guiltygearimg.png" alt="" style="width: 80%;">
+    </center>
+    <div class="text-title">
+        Informações Técnicas
+    </div>
+    <center style="display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%;">
+        <div>
+            <h2>Developer:</h2>	
+            Arc System Works <br><br>
+        
+            <h2>Publisher(s):</h2>	
+            JP/NA: Arc System Works <br>
+            EU/AS: Bandai Namco Entertainment <br>
+            JP: Sega (Arcade) <br>
+            WW: Andamiro (Arcade) <br><br>
+        
+            <h2>Director:</h2>	
+            Akira Katano <br><br>
+        
+            <h2>Designer:</h2>	
+            Daisuke Ishiwatari <br><br>
+        
+            <h2>Artist:</h2>	
+            Hidehiko Sakamura <br><br>
+        
+            <h2>Composer:</h2>	
+            Daisuke Ishiwatari <br><br>
+        
+            <h2>Series:</h2>	
+            Guilty Gear <br><br>
+        </div>
+        <div>
+            <h2>Engine:</h2>	
+            Unreal Engine 4 <br><br>
+        
+            <h2>Platforms:</h2>	
+            PlayStation 4 <br>
+            PlayStation 5 <br>
+            Windows <br>
+            Arcade <br>
+            Xbox One <br>
+            Xbox Series X/S <br>
+            Nintendo Switch <br><br>
+        
+            <h2>Release:</h2>
+            <strong>PS4, PS5, Windows:</strong> Worldwide: June 11, 2021 <br>
+            <strong>Arcade:</strong> Japan: July 29, 2021 <br>
+            <strong>Xbox One, Series X/S:</strong> Worldwide: March 7, 2023 <br>
+            <strong>Nintendo Switch:</strong> Worldwide: January 23, 2025 <br><br>
+        
+            <h2>Genre:</h2>	
+            Fighting <br><br>
+        
+            <h2>Modes:</h2>	
+            Single-player, Multiplayer <br><br>
+        
+            <h2>Arcade system:</h2>	
+            ALL.Net P-ras MULTI Ver.3 <br><br>
+        </div>
+    </center>
+    <div class="text-title">
+        Análises
+    </div>
+    <center>
+    <div class="text">
+        <h4>Escrever uma análise de Guilty Gear -Strive-</h4>
+        <h6>Descreva o que gostou e o que não gostou neste jogo e se você o recomenda a outros. <br>
+        Não se esqueça de ter educação e respeito.</h6>
+        <textarea name="" id="reviewText" rows="10"></textarea>
+        <h6>Você recomenda esse jogo?</h6>
+        <input type="radio" name="toggle" value= "1"><img src="assets/like_icon.png" alt="" style="width: 4vw;"></input>  
+        <input type="radio" name="toggle" value="0"><img src="assets/like_icon.png" alt="Like Icon" style=" transform: rotate(180deg); width: 4vw;"></input>
+        <button onclick="publish(4)" class="analisys-button" >Publicar Analise</button>
+    </div>
+    <div id="avaliacoes" class="text"></div>
+    </center>
+</body>
+</html>
+<script src="js/games.js"></script>
+<script>
+        async function puxarAvaliacoes(fkJogo) {
+        await fetch(`/avaliar/puxar/${fkJogo}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+        }).then((data) => {
+            data.forEach(element => {
+                avaliacoes.innerHTML +=`<div class="text"  style="border: 2px solid white;">
+                                            <h4>${element.username}</h4> <br>
+                                            <h6>${element.mensagem}</h6> <br>
+                                            ${element.sentimento == 1?`<img src="assets/like_icon.png" alt="" style="width: 3vw;">`:`<img src="assets/like_icon.png" alt="Like Icon"style=" transform: rotate(180deg); width: 3vw;">`}
+                                        </div><br>`
+            });
+        });
+    }
+    puxarAvaliacoes(4)
+
+</script>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGameCorner | Doom Eternal</title>
+    <link rel="icon" href="assets/mgc_logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="assets/mgc_logo.png" alt=""class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="loginCadastro.html" id="login_e_cadastro">Login e Cadastro</a></li>
+            <li>
+                <a href="" id="infoUsuario" style="display: none;"></a>
+                <ul id="userMenu" class="dropdown-menu" style="display: none;">
+                    <li><a id="navSair">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="game-logo" style="margin-top: 6vw;">
+        <img src="assets/DOOM_Eternal_logo.jpg" alt="" class="game-logo" style="width: 30vw;">
+    </div>
+    <div class="text-title">
+        Sobre o jogo
+    </div>
+    <center>
+    <div class="text">
+        Slayer vai até o inferno derrotar os demônios que invadiram a terra. Um dos destaques desse jogo é que ele também dá valor para o jogador que tem interesse na lore de Doom Eternal. 
+        Durante toda a gameplay, encontramos vários arquivos (Codex) e diversos coletáveis que dão mais informações do universo rico criado pela Id Software.
+    </div>
+    <img src="assets/doometernalimg.jpg" alt="" style="width: 80%;">
+    </center>
+    <div class="text-title">
+        Informações Técnicas
+    </div>
+    <center style="display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%;">
+        <div>
+            <h2>Desenvolvedora:</h2>	
+            id Software <br><br>
+        
+            <h2>Publicadora:</h2>	
+            Bethesda Softworks <br><br>
+        
+            <h2>Diretor:</h2>	
+            Hugo Martin <br><br>
+        
+            <h2>Produtor:</h2>	
+            Timothy Bell <br><br>
+        
+            <h2>Escritores:</h2>	
+            Hugo Martin <br>
+            Adam Gascoine <br>
+            Jon Lane <br>
+            Chad Mossholder <br><br>
+        
+            <h2>Programador:</h2>	
+            Evan Eubanks <br><br>
+        
+            <h2>Artista:</h2>	
+            Tony Garza <br><br>
+        </div>
+        <div>
+            <h2>Compositor:</h2>	
+            Mick Gordon <br><br>
+        
+            <h2>Motor:</h2>	
+            id Tech 7 <br><br>
+        
+            <h2>Série:</h2>	
+            Doom <br><br>
+        
+            <h2>Plataformas:</h2>	
+            Google Stadia <br>
+            Microsoft Windows <br>
+            Nintendo Switch <br>
+            PlayStation 4 <br>
+            Xbox One <br>
+            PlayStation 5 <br>
+            Xbox Series X/S <br><br>
+        
+            <h2>Lançamento:</h2>
+            <strong>Microsoft Windows, PlayStation 4, Xbox One & Google Stadia:</strong> 20 de março de 2020 <br>
+            <strong>Nintendo Switch:</strong> 8 de dezembro de 2020 <br>
+            <strong>PlayStation 5 & Xbox Series X/S:</strong> 29 de junho de 2021 <br><br>
+        
+            <h2>Gênero:</h2>	
+            Tiro em primeira pessoa <br><br>
+        
+            <h2>Modos de jogo:</h2>	
+            Um jogador <br>
+            Multijogador <br><br>
+        </div>
+        
+    </center>
+    <div class="text-title">
+        Análises
+    </div>
+    <center>
+    <div class="text">
+        <h4>Escrever uma análise de Doom Eternal</h4>
+        <h6>Descreva o que gostou e o que não gostou neste jogo e se você o recomenda a outros. <br>
+        Não se esqueça de ter educação e respeito.</h6>
+        <textarea name="" id="reviewText" rows="10"></textarea>
+        <h6>Você recomenda esse jogo?</h6>
+        <input type="radio" name="toggle" value= "1"><img src="assets/like_icon.png" alt="" style="width: 4vw;"></input>  
+        <input type="radio" name="toggle" value="0"><img src="assets/like_icon.png" alt="Like Icon" style=" transform: rotate(180deg); width: 4vw;"></input>
+        <button onclick="publish(5)" class="analisys-button" >Publicar Analise</button>
+    </div>
+    <div id="avaliacoes" class="text"></div>
+    </center>
+
+</body>
+</html>
+<script src="js/games.js"></script>
+<script>
+        async function puxarAvaliacoes(fkJogo) {
+        await fetch(`/avaliar/puxar/${fkJogo}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+        }).then((data) => {
+            data.forEach(element => {
+                avaliacoes.innerHTML +=`<div class="text"  style="border: 2px solid white;">
+                                            <h4>${element.username}</h4> <br>
+                                            <h6>${element.mensagem}</h6> <br>
+                                                ${element.sentimento == 1?`<img src="assets/like_icon.png" alt="" style="width: 3vw;">`:`<img src="assets/like_icon.png" alt="Like Icon"style=" transform: rotate(180deg); width: 3vw;">`}
+                                        </div><br>`
+            });
+        });
+    }
+    puxarAvaliacoes(5)
+
+</script>
