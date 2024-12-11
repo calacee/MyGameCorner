@@ -1,86 +1,78 @@
 # My Game Corner
 <img src="public/assets/mgc_logo.png"></img>
 
-# Tecnologias Utilizadas
+# Technologies Used
 
- Frontend: HTML, CSS, JavaScript
- Backend: Node.js, Express.js
- Banco de Dados: MySQL
+Frontend: HTML, CSS, JavaScript  
+Backend: Node.js, Express.js  
+Database: MySQL  
 
- 
-# Visão Geral do Projeto
+# Project Overview
 
-O projeto My Game Corner tem como objetivo fornecer uma plataforma interativa para avaliação de jogos. Ele permite que os usuários se cadastrem, façam login e publiquem análises sobre os jogos que jogam. Também fornece gráficos baseados nas análises dos jogos.
+The My Game Corner project aims to provide an interactive platform for game reviews. It allows users to register, log in, and publish reviews about the games they play. Additionally, it provides visual charts based on the game reviews.
 
- Ilustração Representativa da Interface do Usuário
+Illustrative Representation of the User Interface:
 
++-----------------------+ <br>
+|     My Game Corner    | <br>
++-----------------------+ <br>
+|    [Login | Register] | <br>
++-----------------------+ <br>
+|      Hello, User      | <br>
++-----------------------+ <br>
+|   [Game 1] [Game 2]   | <br>
+|   [Game 3] [Game 4]   | <br>
++-----------------------+ <br>
+|   [Profile | Logout]  | <br>
++-----------------------+ <br>
 
- +-----------------------+ <br>
- |     My Game Corner    | <br>
- +-----------------------+ <br>
- |    [Login | Register] | <br>
- +-----------------------+ <br>
- |      Olá, Usuário     | <br>
- +-----------------------+ <br>
- |   [Jogo 1] [Jogo 2]   | <br>
- |   [Jogo 3] [Jogo 4]   | <br>
- +-----------------------+ <br>
- |   [Perfil | Logout]   | <br>
- +-----------------------+ <br>     
+# Features
 
+**User Registration**  
+- **Objective**: Enable new users to register on the platform.  
+- **How It Works**: Users provide a username, email, and password. The system stores the data in the MySQL database, allowing users to log in later.
 
-# Funcionalidades
+**User Authentication**  
+- **Objective**: Allow users to log in and access personalized features.  
+- **How It Works**: Users submit their credentials (username and password), which are verified by the system. If valid, the user is authenticated and granted access.
 
- Cadastro de Usuário
+**Game Reviews**  
+- **Objective**: Allow users to publish their reviews of games.  
+- **How It Works**: Users select a sentiment (positive or negative), write a message, and submit their review. The system records the review in the database, linking it to the game and the user.
 
- Objetivo: Permitir que novos usuários se cadastrem na plataforma.
- Como Funciona: Os usuários inserem um nome de usuário, email e senha. O sistema registra os dados no banco de dados MySQL e os usuários podem, posteriormente, fazer login.
+# Business Rules in the Code
 
- Autenticação de Usuário
+1. **User Registration and Login**  
+   - **Registration**: User data (name, email, password) is validated and stored in the MySQL database.  
+   - **Login**: The system checks if the provided credentials match the stored data. If valid, the user is authenticated.
 
- Objetivo: Permitir que os usuários façam login para acessar suas funcionalidades personalizadas.
- Como Funciona: Os usuários fornecem suas credenciais (nome de usuário e senha), que são verificadas pelo sistema. Se as credenciais forem válidas, o sistema os autentica e permite o acesso.
+2. **Submitting Reviews**  
+   - **Game Reviews**: Users can submit a review for a specific game, including a message and a sentiment (positive or negative).  
+   - **Validation**: The system ensures all necessary fields (message and sentiment) are filled before allowing submission.
 
- Avaliação de Jogos
+3. **Sessions and Local Storage**  
+   - **User Session**: Upon login, user information is stored in `sessionStorage` to maintain authentication state.  
+   - **Logout**: When the user logs out, the `sessionStorage` is cleared, ending the session.
 
- Objetivo: Permitir que os usuários publiquem suas análises sobre jogos.
- Como Funciona: Os usuários selecionam um sentimento (positivo ou negativo), escrevem uma mensagem e enviam sua avaliação. O sistema registra a análise no banco de dados, associando-a ao jogo e ao usuário.
+# Architecture and Data Flow
 
-# Regras de Negócio no Código
+The application follows a client-server architecture, where the frontend handles the user interface, and the backend manages business logic and data storage.
 
-1. Cadastro e Login de Usuários
-     Cadastro: Os dados do usuário (nome, email, senha) são validados e armazenados no banco de dados MySQL.
-     Login: O sistema verifica se as credenciais fornecidas correspondem aos dados armazenados no banco de dados. Se forem válidas, o usuário é autenticado.
+- **Frontend**: Built with HTML, CSS, and JavaScript, the frontend sends requests to the backend and displays information interactively.  
+- **Backend**: Developed with Node.js and Express, the backend processes HTTP requests, executes business logic, and interacts with the MySQL database.  
+- **Database**: The MySQL database stores user, game, and review information.
 
-2. Envio de Avaliações
-     Avaliações de Jogos: Os usuários podem enviar uma avaliação para um jogo específico. A avaliação é composta por uma mensagem e um sentimento (positivo ou negativo).
-     Validação: O sistema valida se todos os campos necessários (mensagem e sentimento) foram preenchidos antes de permitir o envio.
+**Data Flow**:
 
-3. Sessões e Armazenamento Local
-     Sessão de Usuário: Ao fazer login, as informações do usuário são armazenadas no `sessionStorage` para manter o estado de autenticação.
-     Logout: Quando o usuário clica para sair, o `sessionStorage` é limpo, encerrando a sessão.
+User --> Frontend (HTML, CSS, JS) --> HTTP Request --> Backend (Express, Node.js)  
+                                                 |  
+                                                 v  
+                                        Database (MySQL)
 
-# Arquitetura e Fluxo de Dados
+# Usage Instructions
 
-A aplicação segue uma arquitetura cliente-servidor, onde o frontend é responsável pela interface do usuário, e o backend lida com a lógica de negócios e o armazenamento de dados.
+Clone the repository, then with Node.js installed, run the command `npm install`. Use the database script and configure the `.env` file. After that, run the command `npm start` and enjoy the site.
 
-Frontend: Composto por HTML, CSS e JavaScript, o frontend faz requisições ao backend e exibe as informações de forma interativa.
-Backend: O backend, desenvolvido com Node.js e Express, manipula as requisições HTTP, executa a lógica de negócios e interage com o banco de dados MySQL.
-Banco de Dados: O banco de dados MySQL armazena informações dos usuários, jogos e avaliações.
+# Conclusion
 
-Fluxo de Dados
-
-
- Usuário --> Frontend (HTML, CSS, JS) --> Requisição HTTP --> Backend (Express, Node.js)
-                                                      |
-                                                      v
-                                             Banco de Dados (MySQL)
-
-
-# Instruções de Uso
-
-Clonar o repositório, em sequência, com o Node.JS instalado utilizar o comando 'npm install', utilizar o script de banco de dados e configurar o arquivo .env, após isso usar o comando 'npm start' e aproveitar o site.
-
-# Conclusão
-
-O projeto My Game Corner proporciona uma plataforma eficiente para os usuários interagirem com os jogos, deixando suas avaliações e recebendo feedbacks visuais através de gráficos. Ele é desenvolvido utilizando tecnologias modernas como Node.js, Express, MySQL, HTML, CSS e JavaScript, proporcionando uma experiência robusta tanto para os desenvolvedores quanto para os usuários.
+The My Game Corner project provides an efficient platform for users to interact with games, leave reviews, and receive visual feedback through charts. It is developed using modern technologies like Node.js, Express, MySQL, HTML, CSS, and JavaScript, offering a robust experience for both developers and users.
