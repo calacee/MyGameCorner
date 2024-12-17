@@ -24,9 +24,9 @@
         </ul>
     </nav>
     <center>
-        <div class="text" style="margin-top: 10vw;">
+        <div class="text" style="margin-top: 5vw;">
             <center>
-                <select id="selectGrafs">
+                <select id="selectGrafs" style="border: solid white 2px;">
                     <option value="1">Dark Souls 3</option>
                     <option value="2">Devil May Cry 5</option>
                     <option value="3">Resident Evil 2</option>
@@ -35,15 +35,17 @@
                     <option value="6">Hollow Knight</option>
                 </select><br><br>
             <div style="display: flex;flex-direction: row;">
-                <div class="text"  style="border: 2px solid white;" id="kpiPositivo" style="text-align: center;">
+                <div class="text"  style="border: 2px solid white;text-align: center; margin-right: 3vw;" id="kpiPositivo">
                     
                 </div>
-                <div class="text"  style="border: 2px solid white;" id="kpiNegativo" style="text-align: center;">
+                <div class="text"  style="border: 2px solid white;text-align: center;" id="kpiNegativo">
 
                 </div>
             </div>
             </center>
-            <canvas id="myChart"></canvas>
+            <center>
+                <canvas id="myChart" style="width: 80%;"></canvas>
+            </center>
         </div> 
     </center>
 
@@ -57,7 +59,7 @@ selectGrafs.addEventListener('change', mudarGrafico)
 const config = {
       type: 'line',
       options: {
-        responsive: true,
+        responsive: false,
         plugins: {
           legend: {
             position: 'top',
