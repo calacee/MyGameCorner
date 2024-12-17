@@ -84,27 +84,27 @@ document.querySelectorAll('.card').forEach(card => {
 // Abre a pagina dos jogos dos grids
 const darksouls3 = document.getElementById('darksouls3');
 darksouls3.addEventListener('click', () => {
-    window.open('darksouls3.html');
+    window.open('darksouls3.html', '_self');
 });
 const devilmaycry5 = document.getElementById('devilmaycry5');
 devilmaycry5.addEventListener('click', () =>{
-    window.open('devilmaycry5.html');
+    window.open('devilmaycry5.html', '_self');
 });
 const residentevil2 = document.getElementById('residentevil2');
 residentevil2.addEventListener('click', () =>{
-    window.open('residentevil2.html');
+    window.open('residentevil2.html', '_self');
 });
 const guiltygear = document.getElementById('guiltygear');
 guiltygear.addEventListener('click', () =>{
-    window.open('guiltygear.html');
+    window.open('guiltygear.html', '_self');
 });
 const doometernal = document.getElementById('doometernal');
 doometernal.addEventListener('click', () =>{
-    window.open('doometernal.html');
+    window.open('doometernal.html', '_self');
 });
 const hollowknight = document.getElementById('hollowknight');
 hollowknight.addEventListener('click', () =>{
-    window.open('hollowknight.html');
+    window.open('hollowknight.html', '_self');
 });
 
 
@@ -123,6 +123,6 @@ hollowknight.addEventListener('click', () =>{
 const sairNav = document.getElementById('navSair');
     sairNav.addEventListener('click', () =>{
     sessionStorage.clear();
-    window.open('index.html');
+    window.open('index.html', '_self');
 });
 
